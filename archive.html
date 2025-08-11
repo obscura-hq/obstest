@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>[ O ] - Voids' Archive</title>
+  <link rel="icon" href="obsz.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #000;
+      color: #e3e3e3;
+      font-family: 'IBM Plex Mono', monospace;
+      line-height: 1.8;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      text-align: justify;
+    }
+
+    .subhead, .subsubhead {
+      font-weight: bold;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      letter-spacing: 0.5px;
+      line-height: 1.6;
+      color: #ffffff;
+      cursor: pointer;
+      transition: color 0.3s;
+      user-select: none;
+    }
+
+    .subhead {
+      max-width: 850px;
+      margin: 32px auto 12px;
+    }
+
+    .subsubhead {
+      max-width: 810px;
+      margin: 24px auto 12px;
+      padding-left: 60px;
+    }
+
+    .subhead .title-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .subhead img.icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+      filter: brightness(0) invert(1);
+    }
+
+    .arrow {
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .subhead.active .arrow,
+    .subsubhead.active .arrow {
+      transform: rotate(90deg);
+    }
+
+    .collapsible-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      max-height: 0;
+    }
+
+    .collapsible-wrapper.open {
+      max-height: 2000px;
+    }
+
+    .nested-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .nested-wrapper.open {
+      max-height: 1000px;
+    }
+
+    ol {
+      counter-reset: item;
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+    }
+
+    li {
+      counter-increment: item;
+      margin-bottom: 28px;
+      font-size: 17px;
+      line-height: 1.8;
+      position: relative;
+      padding-left: 32px;
+      text-align: justify;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.4s ease 0.2s;
+    }
+
+    .nested-wrapper.open li,
+    .nested-wrapper.open p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    li::before {
+      content: counter(item) ".";
+      position: absolute;
+      left: 0;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    a.back-link {
+      display: block;
+      text-align: center;
+      margin-top: 50px;
+      color: #ccc;
+      text-decoration: underline;
+      font-size: 15px;
+    }
+
+    a.back-link:hover {
+      color: #fff;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .video-container a {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+
+    .video-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .video-container .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 24px 16px; }
+      h1 { font-size: 26px; }
+      li { font-size: 15px; }
+      .subhead, .subsubhead { font-size: 16px; }
+      a.back-link { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Voids' Archive</h1>
+  
+  <div class="section">
+    <div class="subhead">
+      <span class="title-content">
+        01. Sundown Protocol
+      </span>
+      <span class="arrow">▸</span>
+    </div>
+    <div class="collapsible-wrapper">
+        <p>
+          <img src="sundownprotocol.gif" alt="Sundown Protocol" style="width:90%; max-width:600px; height:auto; margin: 0 auto 20px; display: block; border-radius:4px; box-shadow: 0 0 12px rgba(255,255,255,0.1);">
+          Vienna, 1951.<br><br>
+          They say the city is a chessboard — every street, a move. But no one expects to find the next piece in a waffle shop.<br><br>
+          Sundown Waffles sits in the second district, tucked between a closed tailor and a tobacconist. Neutral ground, they call it. Not officially, of course. Here, briefcases meet beneath tables, glances linger too long, and no one orders the waffles for the waffles.<br><br>
+          The neon flickers. The windows fog. You've arrived just before closing.<br><br>
+          Outside, the world spins toward another uncertain winter.<br>
+          Inside, the air smells like syrup and static.<br><br>
+          <em>Take your seat.</em>
+        </p>
+
+      <div class="subsubhead"><span>Sundown Guidelines</span><span class="arrow">▸</span></div>
+      <div class="nested-wrapper">
+        <ol>
+          <li><strong>Age Parameters</strong><br>
+            All Operatives deployed to VOID#001: Sundown Protocol must ensure their characters are at least 18 years old by 1951.
+          </li>
+          <li><strong>Tone, Setting & Story Approach</strong><br>
+            This project focuses on character development within a loosely structured story.
+          </li>
+          <li><strong>Communication & Technology Limits</strong><br>
+            Technology is limited to what would be available in 1951.
+          </li>
+          <li><strong>Writing Expectations</strong><br>
+            You are not required to do extensive plotting or research.
+          </li>
+          <li><strong>Interactions & Collaboration</strong><br>
+            You are encouraged to collaborate and interact with other Operatives.
+          </li>
+        </ol>
+      </div>
+
+      <div class="subsubhead"><span>Sundown Final Transmission</span><span class="arrow">▸</span></div>
+      <div class="nested-wrapper">
+        <p>
+          This marks the conclusion of VOID#001: Sundown Protocol, a narrative experience set in a collapsing loop of memory, identity, and observation. Originally designed for deployment during World Autism Month, this project sought to explore themes of neurodivergence, perception, and the systems that seek to reshape those who don't fit.<br><br>
+          At its heart, Sundown Protocol was never just about operatives, missions, or timelines. It was about difference. About the quiet struggle of those conditioned to forget their truth, and the quiet rebellion of remembering anyway.<br><br>
+          The story is fictional, but its roots are real—tangled in historical silence, misunderstood lives, and the power of story as defiance. Mentions of regimes, institutions, and ideologies are used to deepen narrative context, not to sensationalise. We hope they’ve been handled with nuance, care, and respect.<br><br>
+          To everyone who stepped into the Protocol—thank you. For noticing the clues, for writing your truths, for remembering what they tried to erase.<br><br>
+          You were always more than just a variable.<br>
+          <em>“Memory is the lock. The body is the key.”</em>
+        </p>
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=AlAep_eF-cE" target="_blank">
+            <img src="https://img.youtube.com/vi/AlAep_eF-cE/hqdefault.jpg" alt="Sundown Protocol Video Thumbnail">
+            <div class="overlay">
+              <strong>This video is age-restricted and must be viewed on YouTube.<br><br>Click to watch →</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="subhead">
+      <span class="title-content">
+        02. Operation Rose Mary
+      </span>
+      <span class="arrow">▸</span>
+    </div>
+    <div class="collapsible-wrapper">
+        <p>
+          <img src="rmt.png" alt="Rose Mary's Teeth" style="width:90%; max-width:600px; height:auto; margin: 0 auto 20px; display: block; border-radius:4px; box-shadow: 0 0 12px rgba(255,255,255,0.1);">
+          <strong>Somewhere near the Mississippi, 1970s.<br><br></strong>
+          Some girls paint their lips red. Some girls paint escape routes.<br><br>
+          Rose Mary’s Teeth is reopening. The lights are low. The mirrorball still turns.<br><br>
+          You’re not here to be seen. You’re here to be free.<br><br>
+          Bring nothing you can’t run with.
+          Leave nothing that could name you.
+          Dance like the world forgot you.<br>
+          Tell no one.<br><br>
+          Dans le vieux quartier. Knock once. Remember, Georgie sent you.<br><br>
+          <em>If you don't fit in, come right in.</em>
+        </p>
+
+      <div class="subsubhead"><span>Sundown Guidelines</span><span class="arrow">▸</span></div>
+      <div class="nested-wrapper">
+        <ol>
+          <li><strong>Age Parameters</strong><br>
+            All Operatives deployed to VOID#001: Sundown Protocol must ensure their characters are at least 18 years old by 1951.
+          </li>
+          <li><strong>Tone, Setting & Story Approach</strong><br>
+            This project focuses on character development within a loosely structured story.
+          </li>
+          <li><strong>Communication & Technology Limits</strong><br>
+            Technology is limited to what would be available in 1951.
+          </li>
+          <li><strong>Writing Expectations</strong><br>
+            You are not required to do extensive plotting or research.
+          </li>
+          <li><strong>Interactions & Collaboration</strong><br>
+            You are encouraged to collaborate and interact with other Operatives.
+          </li>
+        </ol>
+      </div>
+
+      <div class="subsubhead"><span>Sundown Final Transmission</span><span class="arrow">▸</span></div>
+      <div class="nested-wrapper">
+        <p>
+          This marks the conclusion of VOID#001: Sundown Protocol, a narrative experience set in a collapsing loop of memory, identity, and observation. Originally designed for deployment during World Autism Month, this project sought to explore themes of neurodivergence, perception, and the systems that seek to reshape those who don't fit.<br><br>
+          At its heart, Sundown Protocol was never just about operatives, missions, or timelines. It was about difference. About the quiet struggle of those conditioned to forget their truth, and the quiet rebellion of remembering anyway.<br><br>
+          The story is fictional, but its roots are real—tangled in historical silence, misunderstood lives, and the power of story as defiance. Mentions of regimes, institutions, and ideologies are used to deepen narrative context, not to sensationalise. We hope they’ve been handled with nuance, care, and respect.<br><br>
+          To everyone who stepped into the Protocol—thank you. For noticing the clues, for writing your truths, for remembering what they tried to erase.<br><br>
+          You were always more than just a variable.<br>
+          <em>“Memory is the lock. The body is the key.”</em>
+        </p>
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=AlAep_eF-cE" target="_blank">
+            <img src="https://img.youtube.com/vi/AlAep_eF-cE/hqdefault.jpg" alt="Sundown Protocol Video Thumbnail">
+            <div class="overlay">
+              <strong>This video is age-restricted and must be viewed on YouTube.<br><br>Click to watch →</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function toggleMainSection(header) {
+        const wrapper = header.nextElementSibling;
+        const isOpening = !wrapper.classList.contains('open');
+
+        document.querySelectorAll('.collapsible-wrapper').forEach(w => {
+            w.classList.remove('open');
+            w.previousElementSibling.classList.remove('active');
+        });
+
+        document.querySelectorAll('.nested-wrapper').forEach(n => {
+            n.classList.remove('open');
+            if (n.previousElementSibling) {
+            n.previousElementSibling.classList.remove('active');
+            }
+        });
+
+        if (isOpening) {
+            wrapper.classList.add('open');
+            header.classList.add('active');
+        }
+        }
+
+        function toggleSubSection(header) {
+        const wrapper = header.nextElementSibling;
+        const isOpening = !wrapper.classList.contains('open');
+
+        const parentWrapper = header.closest('.collapsible-wrapper');
+        parentWrapper.querySelectorAll('.nested-wrapper').forEach(n => {
+            n.classList.remove('open');
+            if (n.previousElementSibling) {
+            n.previousElementSibling.classList.remove('active');
+            }
+        });
+
+        if (isOpening) {
+            wrapper.classList.add('open');
+            header.classList.add('active');
+        }
+        }
+
+        document.querySelectorAll('.subhead').forEach(header => {
+        header.addEventListener('click', function () {
+            toggleMainSection(this);
+        });
+        });
+
+        document.querySelectorAll('.subsubhead').forEach(header => {
+        header.addEventListener('click', function (e) {
+            e.stopPropagation();
+            toggleSubSection(this);
+        });
+        });
+    });
+  </script>
+
+</body>
+</html>
